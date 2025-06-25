@@ -63,8 +63,6 @@ def main():
     for i in data:
         job_no = i[0]
         mybody = f"""\
-            Hello,
-            {job_no}
             Dear Team,
             Kindly review the pending job id - {job_no} and complete on time.
            """
