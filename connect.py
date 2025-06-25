@@ -37,22 +37,39 @@ def fetch_data_from_db():
     conn.close()
     return my_data
 
+<<<<<<< HEAD
 def send_mail(receiver_mail , body):
+=======
+def send_mail(body):
+>>>>>>> c8eca2a (final)
     config = read_file() 
     SMTP_SERVER = config.get('smtp_host')  #SERVER URL#  
     SMTP_PORT = config.getint('smtp_port')  # port of the smtp ss
     SENDER_EMAIL =  config.get('mail_from')# MAIL OF sender person
+<<<<<<< HEAD
     # RECEIVER_MAIL = config.get('mail_to')
 
     msg = MIMEMultipart()
     msg['From'] = SENDER_EMAIL
     # msg['To'] = receiver_mail
     msg['Subject'] = "regardig your document varification"
+=======
+    RECEIVER_MAIL = config.get('mail_to')
+
+    msg = MIMEMultipart()
+    msg['From'] = SENDER_EMAIL
+    msg['To'] = RECEIVER_MAIL
+    msg['Subject'] = "Reminder for Job completion"
+>>>>>>> c8eca2a (final)
     msg.attach(MIMEText(body , 'plain'))
 
     # try:
     with smtplib.SMTP(SMTP_SERVER , SMTP_PORT) as server:
+<<<<<<< HEAD
         server.sendmail(SENDER_EMAIL , receiver_mail,  msg.as_string())  # sending the message
+=======
+        server.sendmail(SENDER_EMAIL , RECEIVER_MAIL,  msg.as_string())  # sending the message
+>>>>>>> c8eca2a (final)
         print("email sent successfully")
     # except:
         # print("error sending of mail")      
@@ -62,6 +79,7 @@ def main():
     for i in data:
         job_no = i[0]
         mybody = f"""\
+<<<<<<< HEAD
             Hello,
             {job_no}
             This is a reminder regarding your document verification.
@@ -91,3 +109,12 @@ if __name__ == "__main__":
 
 
 
+=======
+            Dear Team,
+            Kindly review the pending job id - {job_no} and complete on time.
+           """
+        send_mail(mybody)
+
+if __name__ == "__main__":
+    main()
+>>>>>>> c8eca2a (final)

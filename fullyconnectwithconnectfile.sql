@@ -49,4 +49,7 @@ insert into fuser(user_id, user_name, email) values (102, 'Bikash' , 'bikash.mah
 insert into fuser(user_id, user_name, email) values (105, 'Rajatsoni123' , 'rajat123@gmail.com');
 insert into fuser(user_id, user_name, email) values (106, 'Rajatsoni12' , 'rajat12@gmail.com');
 insert into fuser(user_id, user_name, email) values (107, 'Rajatsoni111' , 'rajat111@gmail.com');
+<<<<<<< HEAD
 s
+=======
+>>>>>>> c8eca2a (final)
